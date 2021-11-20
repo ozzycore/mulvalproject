@@ -1,0 +1,75 @@
+---
+# Path to run scripts directory
+path: vagrant
+
+# Configured hosts
+hosts:
+    - name: centos01
+      identifier: centos01
+      autostart: true
+      box: centos/7
+      ip: 10.0.0.20
+      provider:
+          - { directive: memory, value: "2048" }
+      authorize: ~/.ssh/id_rsa.pub
+      keys:
+        - ~/.ssh/id_rsa
+
+    - name: rhel01
+      identifier: rhel01
+      autostart: true
+      box: generic/rhel7
+      ip: 10.0.0.21
+      provider:
+          - { directive: memory, value: "2048" }
+      authorize: ~/.ssh/id_rsa.pub
+      keys:
+        - ~/.ssh/id_rsa
+
+    - name: ubuntu01
+      identifier: ubuntu01
+      autostart: true
+      box: ubuntu/trusty64
+      ip: 10.0.0.22
+      provider:
+          - { directive: memory, value: "2048" }
+      authorize: ~/.ssh/id_rsa.pub
+      keys:
+        - ~/.ssh/id_rsa
+
+    - name: centos02
+      identifier: centos02
+      autostart: true
+      box: centos/7
+      box_version: 1803.01
+      ip: 10.0.0.23
+      provider:
+          - { directive: memory, value: "2048" }
+      authorize: ~/.ssh/id_rsa.pub
+      keys:
+        - ~/.ssh/id_rsa
+
+    - name: nessus01
+      identifier: nessus01
+      autostart: true
+      box: centos/7
+      ip: 10.0.0.10
+      provider:
+          - { directive: memory, value: "4096" }
+          - { directive: cpus, value: "2" }
+      authorize: ~/.ssh/id_rsa.pub
+      keys:
+        - ~/.ssh/id_rsa
+
+    - name: mulval01
+      identifier: mulval01
+      autostart: true
+      box: centos/7
+      ip: 10.0.0.11
+      provider:
+          - { directive: memory, value: "8192" }
+          - { directive: cpus, value: "2" }
+      authorize: ~/.ssh/id_rsa.pub
+      keys:
+        - ~/.ssh/id_rsa
+
