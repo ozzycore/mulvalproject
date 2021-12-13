@@ -16,6 +16,8 @@ nvd_files = [f for f in listdir(NVDPATH) if isfile(join(NVDPATH, f))]
 print(nvd_files)
 
 conn = get_connection()
+cursor = conn.cursor()
+cursor.execute("USE {}".format(DB_NAME))
 
 for f in nvd_files:
     f = open(join(NVDPATH,f))
